@@ -1,0 +1,20 @@
+#trucs utiles
+$ help <command>                             #ouvrir le manuel d'utilisation de la commande
+
+Configurer git
+$ config [--system/global] [user.name/user.mail/core.editor/...]   #configurer git
+$ config [--system/global] --list                                  #lister la config de git
+$ config [--system/global] alias.<alias> <cmd>                     #créer un alias git
+
+Fonctions de bases
+$ init                                       #initialiser un dépot git
+$ status [-s/--short]                        #lister l'état du travail avec le dépot [format compressé]
+$ log [--graph] [--all]                      #visualiser l'historique des commits [--graph : format graphique de l'historique
+                                                                                   --all   : historique de toutes les branches]
+$ add <file>                                 #indexer un fichier
+$ reset HEAD <file>                          #désindexer un fichier
+$ mv <original_name> <new_name>              #renommer un fichier
+$ rm [--staged/cached]                       #supprimer un fichier [uniquement du répertoire git]
+$ commit [-a] [-m "message"]                 #valider des modification [indexer automatiquement tout fichier suivi et modifié]
+$ commit --amend                             #ajouter au dernier commit les nouvelles modifications
+
