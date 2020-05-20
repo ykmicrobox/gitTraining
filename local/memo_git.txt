@@ -11,10 +11,18 @@ $ init                                       #initialiser un dépot git
 $ status [-s/--short]                        #lister l'état du travail avec le dépot [format compressé]
 $ log [--graph] [--all]                      #visualiser l'historique des commits [--graph : format graphique de l'historique
                                                                                    --all   : historique de toutes les branches]
+$ diff [--staged/cached]                     #lister les modifications non indexées [ou ajoutées à l'index]
+$ diff <br1>...<br2>                         #montrer les modifications introduites par br1 depuis son ancêtre commun avec br2
+$ log <br1> --not <br2>                      #détérminer les modifications introduites par br1 dans br2
+$ restore <file>                             #réinitialiser un fichier modifié
 $ add <file>                                 #indexer un fichier
-$ reset HEAD <file>                          #désindexer un fichier
+$ restore --staged <file>                    #désindexer un fichier
 $ mv <original_name> <new_name>              #renommer un fichier
 $ rm [--staged/cached]                       #supprimer un fichier [uniquement du répertoire git]
 $ commit [-a] [-m "message"]                 #valider des modification [indexer automatiquement tout fichier suivi et modifié]
-$ commit --amend                             #ajouter au dernier commit les nouvelles modifications
-
+$ commit --amend                             #écraser le dernier commit par de nouvelles modifications ou juste changer le message
+$ reset [--soft/mixed/hard] HEAD~[n]         #revenir en arrière et annuler des commits [--soft: juste avant le commit dans l'état staged
+                                                                                         --mixed: au commit précédent en gardant les modifs
+                                                                                         --hard: au commit précédent en supprimant toutes les modifs]
+$ clean -[n/i]                               #nettoyer l'espace de travail [-n: lister les éléments à supprimer
+                                                                            -i: faire un nettoyage intéractif]
